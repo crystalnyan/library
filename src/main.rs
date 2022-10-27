@@ -9,4 +9,19 @@ fn main() {
   utils::show_default_menu();
 
   let mut choice = utils::get_choice();
+
+  loop {
+
+    match  choice {
+      Some(num) => {
+        if num == 1 { };
+        if num ==2  { };
+        if num ==3 { break; } ;
+      },
+      None => ()
+    }
+
+  }
+
+  println!("Goodbye TT");
 }
