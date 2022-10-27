@@ -12,6 +12,6 @@ pub  struct Book {
 }
 
 enum Roles{
-	customer,
-	librarian
+	Customer,
+	Librarian
 }
