@@ -11,6 +11,7 @@ pub  struct Book {
 	pub  author: String,
 }
 
+#[derive(Debug)]
 enum Roles{
 	Customer,
 	Librarian
