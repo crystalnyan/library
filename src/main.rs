@@ -1,11 +1,6 @@
-use std::mem::needs_drop;
-
-pub  mod  types;
+pub  mod types;
+pub  mod utils;
 
 fn main() {
-    let  book = types::Book {
-      title: String::from("smth"),
-      author: String::from("meow")
-    };
-    println!("{:#?}", book);
+    utils::show_default_menu();
 }
