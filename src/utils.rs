@@ -1,4 +1,5 @@
 use std::io;
+use std::string::ParseError;
 
 pub fn show_default_menu() {
   println!(
@@ -9,17 +10,12 @@ pub fn show_default_menu() {
         3. Leave");
 }
 
-pub fn get_choice() -> Option<u8> {
+pub fn get_choice() -> u8 {
   let mut choice = String::new();
 
   io::stdin()
 	  .read_line(&mut choice)
 	  .expect("Can't read the choice TT");
 
-  let choice: Option<u8> = match choice.trim().parse() {
-	Ok(num) => Some(num),
-	Err(_) => None
-  };
-
-  choice
+  choice.trim().parse().unwrap_or(0)
 }

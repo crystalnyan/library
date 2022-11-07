@@ -1,5 +1,3 @@
-use std::io;
-
 pub mod types;
 pub mod utils;
 
@@ -11,16 +9,24 @@ fn main() {
   let mut choice = utils::get_choice();
 
   loop {
-
-    match  choice {
-      Some(num) => {
-        if num == 1 { };
-        if num ==2  { };
-        if num ==3 { break; } ;
-      },
-      None => ()
-    }
-
+	match choice {
+	  1 => {
+		println!("You are a customer");
+		break;
+	  }
+	  2 => {
+		println!("You are a librarian");
+		break;
+	  }
+	  3 => {
+		println!("Bye!");
+		break;
+	  }
+	  _ => {
+		println!("We dont have this Option :( Try again");
+		choice = utils::get_choice();
+	  }
+	}
   }
 
   println!("Goodbye TT");
