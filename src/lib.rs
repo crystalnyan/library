@@ -1,3 +1,6 @@
+pub  mod  types;
+use crate::types::Book;
+
 use std::io;
 
 pub fn show_default_menu() {
@@ -17,6 +20,31 @@ pub fn show_customer_menu() {
         2. \n\
         3. Leave"
   );
+}
+
+pub  fn  customer_actions() {
+  let  choice = get_choice();
+
+  match choice {
+    1 => show_books(),
+    _ => ()
+  }
+}
+
+pub  fn  show_books() {
+  let  mut books: Vec<Book> = vec![
+    Book{
+      title: String::from("Harry Potter"),
+      author: String::from("Joan K. Rowling"),
+      quantity: 3},
+  ];
+
+  // closure!
+  books.sort_by_key(|b| b.quantity);
+
+  for b in books {
+    println!("{} by {}: {}",b.title, b.author, b.quantity);
+  }
 }
 
 pub fn get_choice() -> u8 {
@@ -40,6 +68,8 @@ pub fn run() {
     match choice {
       1 => {
         show_customer_menu();
+        customer_actions();
+        choice = get_choice();
         break;
       }
       2 => {
