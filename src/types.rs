@@ -9,6 +9,7 @@ struct User {
 pub struct Book {
   pub title: String,
   pub author: String,
+  pub quantity: i32,
 }
 
 #[derive(Debug)]
