@@ -5,3 +5,6 @@ Cargo.lock
 
 .idea
 .env
+
+#local storage file
+library.txt
