@@ -1,7 +1,3 @@
-pub mod types;
-
-use crate::types::Book;
-
 use std::io;
 use std::fs::{File, OpenOptions};
 use std::io::{Read, Write};
@@ -36,9 +32,9 @@ pub fn customer_actions() {
 
 fn add_books() {
     println!("How many different book titles you want to add?");
-    let mut count = get_choice();
+    let count = get_choice();
 
-    for i in 0..count {
+    for _ in 0..count {
         let (mut title, mut author, mut quantity) = (String::new(), String::new(), String::new());
         println!("Enter title: ");
         io::stdin().read_line(&mut title).expect("Something went wrong...");
