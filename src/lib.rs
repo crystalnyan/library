@@ -2,6 +2,8 @@ pub  mod  types;
 use crate::types::Book;
 
 use std::io;
+use std::fs::{File, OpenOptions};
+use std::io::Write;
 
 pub fn show_default_menu() {
   println!(
@@ -28,6 +30,32 @@ pub  fn  customer_actions() {
   match choice {
     1 => show_books(),
     _ => ()
+  }
+}
+
+fn add_books() {
+  println!("How many different book titles you want to add?");
+  let mut count = get_choice();
+
+  for i in 0..count {
+    let (mut title, mut author, mut quantity) = (String::new(), String::new(), String ::new());
+    println!("Enter title: ");
+    io::stdin().read_line(&mut title).expect("Something went wrong...");
+    println!("Enter author name: ");
+    io::stdin().read_line(&mut author).expect("Something went wrong...");
+    println!("Enter quantity: ");
+    io::stdin().read_line(&mut quantity).expect("Something went wrong...");
+
+    // TODO: check quantity to be valid int
+
+    let record = title + &author + &quantity;
+
+    let mut file = match OpenOptions::new().append(true).open("library.txt") {
+      Ok(file) => file,
+      Err(_) => File::create("library.txt").unwrap()
+    };
+
+    file.write(record.as_ref()).expect("Write operation to file failed");
   }
 }
 
@@ -74,6 +102,7 @@ pub fn run() {
       }
       2 => {
         println!("You are a librarian");
+        add_books();
         break;
       }
       3 => {
