@@ -6,5 +6,7 @@ Cargo.lock
 .idea
 .env
 
+.DS_Store
+
 #local storage file
 library.txt
