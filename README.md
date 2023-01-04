@@ -1,7 +1,21 @@
 # Library 📒
-my experiment to befriend Rust
+Small console I/O LMS project.
 
-<br />Basically, this small project is aimed to assist me in my Rust exploring journey.
-<br />I will try to add new features and concepts I learn and improve the project.
+<br> The aim of the app is to provide a convenient
+<br> electronic interface of a physical library.
+<br> It lets customers to see available books and 
+<br> reserve them online to take later 
+<br> from the physical library.
+<br> And librarians are able to manage the 
+<br> electronic interface of a library.
 
-<br />Sooo.... I dont know what it will be at the end- just gonna enjoy the process!~
+# Functionality
+### Logged as a customer:
+- View available books (partial)
+- Reserve a book (upcoming)
+- Cancel the reservation (upcoming)
+
+### Logged as a librarian:
+- View all books (upcoming)
+- Add books
+- Remove books (upcoming)
