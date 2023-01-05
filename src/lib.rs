@@ -1,6 +1,7 @@
 mod menu;
 mod user;
 mod utils;
+mod types;
 
 pub fn run() {
     menu::default();
