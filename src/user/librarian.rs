@@ -4,7 +4,17 @@ use std::io::{Read, Write};
 
 use crate::utils;
 
-pub(crate) fn show_books() {
+pub(crate) fn librarian_actions() {
+    let choice = utils::get_choice();
+
+    match choice {
+        1 => show_books(),
+        2 => add_books(),
+        _ => ()
+    }
+}
+
+fn show_books() {
     let mut file = File::open("library.txt").unwrap();
     let mut buffer = String::new();
     file.read_to_string(&mut buffer).unwrap();
@@ -20,7 +30,7 @@ pub(crate) fn show_books() {
     }
 }
 
-pub(crate) fn add_books() {
+fn add_books() {
     println!("How many different book titles you want to add?");
     let count = utils::get_choice();
 

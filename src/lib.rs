@@ -17,8 +17,9 @@ pub fn run() {
                 break;
             }
             2 => {
-                println!("You are a librarian");
-                user::librarian::add_books();
+                menu::librarian();
+                user::librarian::librarian_actions();
+                choice = utils::get_choice();
                 break;
             }
             3 => {
