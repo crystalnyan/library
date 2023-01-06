@@ -16,3 +16,14 @@ pub(super) fn customer() {
         3. Leave"
     );
 }
+
+pub(super) fn librarian() {
+    println!(
+        "Customer!~\n\
+        What you wanna do?\n\
+        1. See all books!\n\
+        2. Add a book\n\
+        3. Remove a book\n\
+        4. Leave"
+    );
+}
