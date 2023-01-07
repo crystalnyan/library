@@ -69,7 +69,13 @@ fn add_books() {
             io::stdin().read_line(&mut quantity_string).expect("Something went wrong...");
             match quantity_string.trim().parse() {
                 Ok(q) => {
-                    quantity = q;
+                    match q {
+                        q if q > 0 => {quantity = q;},
+                        _ => {
+                            println!("Quantity should be greater than 0!");
+                            continue;
+                        }
+                    }
                 }
                 Err(_) => {
                     println!("Could not parse. Please enter a number: ");
