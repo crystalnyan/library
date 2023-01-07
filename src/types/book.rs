@@ -1,11 +1,11 @@
 pub struct Book {
     title: String,
     author: String,
-    quantity: i32,
+    quantity: u8,
 }
 
 impl Book {
-    pub fn new(title: String, author: String, quantity: i32) -> Book {
+    pub fn new(title: String, author: String, quantity: u8) -> Book {
         Book {
             title,
             author,
