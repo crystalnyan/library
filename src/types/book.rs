@@ -21,6 +21,15 @@ impl Book {
         let quantity = quantity.trim().parse().unwrap();
         Book::new(title.clone(), author.clone(), quantity)
     }
+
+    pub fn print_collection(books: Vec<Book>) {
+        for book in books {
+            let title = book.get_title();
+            let author = book.get_author();
+            let quantity = book.get_quantity();
+            print!("{} | {} | {}\n", title, author, quantity);
+        }
+    }
 }
 
 impl ToString for Book {

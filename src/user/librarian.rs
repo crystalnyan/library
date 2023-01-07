@@ -17,13 +17,7 @@ pub(crate) fn librarian_actions() {
 
 fn show_books() {
     let books = get_all();
-
-    for book in books {
-        let title = book.get_title();
-        let author = book.get_author();
-        let quantity = book.get_quantity();
-        print!("{} | {} | {}\n", title, author, quantity);
-    }
+    Book::print_collection(books);
 }
 
 fn get_all() -> Vec<Book> {
