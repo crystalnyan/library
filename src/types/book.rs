@@ -16,6 +16,9 @@ impl Book {
 
 impl ToString for Book {
     fn to_string(&self) -> String {
-        String::from(self.title.clone() + &(self.author) + &(self.quantity.to_string()))
+        let record =
+            "\n".to_string()
+            + &self.title + &(self.author) + &(self.quantity.to_string());
+        String::from(record)
     }
 }
