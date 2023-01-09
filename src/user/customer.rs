@@ -15,12 +15,12 @@ pub(crate) fn customer_actions() {
             1 => {
                 utils::clear_screen();
                 show_books();
-                println!("Press Enter to continue: ");
-                let _ = utils::get_choice();
+                utils::continue_screen();
             }
             3 => exit(1),
             _ => {
                 println!("No such option! Try again.");
+                utils::continue_screen();
                 continue;
             }
         }
