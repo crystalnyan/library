@@ -1,16 +1,32 @@
 use std::fs::File;
 use std::io::Read;
+use std::process::exit;
 
 use crate::types::book::Book;
-use crate::utils;
+use crate::{menu, utils};
 
 pub(crate) fn customer_actions() {
-    let choice = utils::get_choice();
+    loop {
+        utils::clear_screen();
+        menu::customer();
+        let choice = utils::get_choice();
 
-    match choice {
-        1 => show_books(),
-        _ => ()
+        match choice {
+            1 => {
+                utils::clear_screen();
+                show_books();
+                println!("Press Enter to continue: ");
+                let _ = utils::get_choice();
+            }
+            3 => exit(1),
+            _ => {
+                println!("No such option! Try again.");
+                continue;
+            }
+        }
+        println!("What you wanna do?");
     }
+
 }
 
 fn show_books() {
