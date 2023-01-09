@@ -2,6 +2,7 @@ use std::fs::{File, OpenOptions};
 use std::io;
 use std::io::{Read, Write};
 use std::process::exit;
+
 use crate::types::book::Book;
 use crate::menu;
 
@@ -10,16 +11,21 @@ use crate::utils;
 pub(crate) fn librarian_actions() {
     loop
     {
+        utils::clear_screen();
         menu::librarian();
         let choice = utils::get_choice();
 
         match choice {
             1 => {
+                utils::clear_screen();
                 show_books();
-                println!("Press any button to continue: ");
+                println!("Press Enter to continue: ");
                 let _ = utils::get_choice();
             },
-            2 => add_books(),
+            2 => {
+                utils::clear_screen();
+                add_books();
+            },
             4 => exit(1),
             _ => {
                 println!("No such option! Try again.");
