@@ -19,7 +19,7 @@ pub(super) fn customer() {
 
 pub(super) fn librarian() {
     println!(
-        "Customer!~\n\
+        "Librarian!~\n\
         What you wanna do?\n\
         1. See all books!\n\
         2. Add a book\n\
