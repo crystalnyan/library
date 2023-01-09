@@ -17,7 +17,6 @@ pub fn run() {
                 break;
             }
             2 => {
-                menu::librarian();
                 user::librarian::librarian_actions();
                 choice = utils::get_choice();
                 break;
